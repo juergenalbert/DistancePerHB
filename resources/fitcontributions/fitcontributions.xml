@@ -1,0 +1,5 @@
+<fitContributions>
+ <fitField id="0" displayInChart="true" sortOrder = "0" precision="2"
+    chartTitle="@Strings.FitFieldChartTitle" dataLabel="@Strings.FitFieldDataLabel"
+    unitLabel="@Strings.FitFieldUnitLabel" fillColor="#FFC10B" />
+</fitContributions>
