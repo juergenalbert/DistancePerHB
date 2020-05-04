@@ -8,7 +8,7 @@ class DistancePerHBContributor {
 
     function initialize(dataField) {
 		fitField = dataField.createField("mPerHB", FIT_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, 
-			{ :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"m/hb" });
+			{ :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"m/heartbeat" });
     	fitField.setData(0.0);
     }
 	
