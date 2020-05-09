@@ -17,14 +17,22 @@ class DistancePerHBContributor {
 	hidden var active = true;
 
     function initialize(dataField) {
+		var units; 
+        var type = System.getDeviceSettings().distanceUnits;
+        if( type == System.UNIT_STATUTE ) {
+        	units = WatchUi.loadResource(Rez.Strings.UnitsStatute);
+		} else {
+        	units = WatchUi.loadResource(Rez.Strings.UnitsMetric);
+		}
+
 		fitFieldRecord = dataField.createField("Current", FIT_FIELD_RECORD_ID, FitContributor.DATA_TYPE_FLOAT, 
-			{ :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"m/heartbeat" });
+			{ :mesgType => FitContributor.MESG_TYPE_RECORD, :units => units });
     	fitFieldRecord.setData(0.0);
 		fitFieldLap = dataField.createField("Lap", FIT_FIELD_LAP_ID, FitContributor.DATA_TYPE_FLOAT, 
-			{ :mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"m/heartbeat" });
+			{ :mesgType => FitContributor.MESG_TYPE_LAP, :units => units });
     	fitFieldLap.setData(0.0);
 		fitFieldSession = dataField.createField("Session", FIT_FIELD_SESSION_ID, FitContributor.DATA_TYPE_FLOAT, 
-			{ :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"m/heartbeat" });
+			{ :mesgType => FitContributor.MESG_TYPE_SESSION, :units => units });
     	fitFieldSession.setData(0.0);
     }
 	

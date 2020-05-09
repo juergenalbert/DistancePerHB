@@ -1,7 +1,10 @@
 <strings>
     <string id="AppName">Distance per Heartbeat</string>
-    <string id="Label">M PER H.BEAT</string>
 	<string id="FitFieldChartTitle">Distance per Heartbeat</string>
 	<string id="FitFieldDataLabel">Distance per Heartbeat</string>
 	<string id="FitFieldUnitLabel">meters</string>
+	<string id="UnitsStatute">feet</string>
+	<string id="UnitsMetric">meters</string>
+	<string id="LabelStatute">FT PER H.BEAT</string>
+	<string id="LabelMetric">M PER H.BEAT</string>
 </strings>

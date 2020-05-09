@@ -5,11 +5,19 @@ using Toybox.FitContributor;
 class DistancePerHBView extends WatchUi.SimpleDataField {
 
 	hidden var fitContibutor;
+	hidden var factor;
 
     function initialize() {
         SimpleDataField.initialize();        
         
-        label = WatchUi.loadResource(Rez.Strings.Label);
+        var type = System.getDeviceSettings().distanceUnits;
+        if( type == System.UNIT_STATUTE ) {
+        	label = WatchUi.loadResource(Rez.Strings.LabelStatute);
+        	factor = 3.281;
+		} else {
+		    label = WatchUi.loadResource(Rez.Strings.LabelMetric);
+        	factor = 1; 
+		}
         fitContibutor = new DistancePerHBContributor(self);
     }
 
@@ -17,7 +25,7 @@ class DistancePerHBView extends WatchUi.SimpleDataField {
     	Debug.logMessage("DistancePerHBView", "compute");
 		var result = "-.--";
 		if (info.currentSpeed != null && info.currentHeartRate != null) {
-			result = info.currentSpeed * 60 / info.currentHeartRate;
+			result = info.currentSpeed * 60 / info.currentHeartRate * factor;
 			fitContibutor.save(result);
 		} 
         return result;
