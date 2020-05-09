@@ -17,13 +17,13 @@ class DistancePerHBContributor {
 	hidden var active = true;
 
     function initialize(dataField) {
-		fitFieldRecord = dataField.createField("mPerHB", FIT_FIELD_RECORD_ID, FitContributor.DATA_TYPE_FLOAT, 
+		fitFieldRecord = dataField.createField("Current", FIT_FIELD_RECORD_ID, FitContributor.DATA_TYPE_FLOAT, 
 			{ :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"m/heartbeat" });
     	fitFieldRecord.setData(0.0);
-		fitFieldLap = dataField.createField("mPerHB", FIT_FIELD_LAP_ID, FitContributor.DATA_TYPE_FLOAT, 
+		fitFieldLap = dataField.createField("Lap", FIT_FIELD_LAP_ID, FitContributor.DATA_TYPE_FLOAT, 
 			{ :mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"m/heartbeat" });
     	fitFieldLap.setData(0.0);
-		fitFieldSession = dataField.createField("mPerHB", FIT_FIELD_SESSION_ID, FitContributor.DATA_TYPE_FLOAT, 
+		fitFieldSession = dataField.createField("Session", FIT_FIELD_SESSION_ID, FitContributor.DATA_TYPE_FLOAT, 
 			{ :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"m/heartbeat" });
     	fitFieldSession.setData(0.0);
     }
